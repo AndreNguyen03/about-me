@@ -1,15 +1,15 @@
-import { LinkedinIcon } from "../../icons"
+import type { ReactElement } from 'react';
 
-function ConnectCard() {
+function ConnectCard({ icon, label, desc }: { icon: ReactElement; label: string; desc: string }) {
 	return (
 		<div className='flex flex-col gap-2'>
 			<div className='flex gap-2 rounded-lg px-6 py-6 shadow-lg'>
-				<LinkedinIcon />
+				{icon}
 				<div className='flex flex-col'>
 					<p className='text-sm font-bold'>
-						Linkedin <span className='font-normal text-slate-400'>@AndreNguyen03</span>
+						{label} <span className='font-normal text-slate-400'>@AndreNguyen03</span>
 					</p>
-					<p className='text-sm text-slate-500'>Connect with me professionally and see my career journey</p>
+					<p className='text-sm text-slate-500'>{desc}</p>
 				</div>
 			</div>
 		</div>

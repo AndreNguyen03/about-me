@@ -6,7 +6,7 @@ function TabPanel({ value, children, className }: { className?: string; value: s
 
 	if (activeTab !== value) return null
 
-	return <div className={`px-4 py-4 ${className}`}>{children}</div>
+	return <div className={`px-4 py-4 flex flex-col gap-4 ${className}`}>{children}</div>
 }
 
 export { TabPanel }

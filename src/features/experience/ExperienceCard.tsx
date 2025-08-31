@@ -13,7 +13,7 @@ function ExperienceCard() {
 				</div>
 				<div className='flex flex-col gap-1 items-end'>
 					<span className='flex items-center gap-1 w-fit'>
-						<CalendarIcon /> 2022- Present
+						<CalendarIcon /> 2022 - Present
 					</span>
 					<span className='flex items-center justify-between gap-2'>
 						<LocationIcon />

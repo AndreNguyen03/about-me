@@ -1,29 +1,44 @@
-import { EnvelopeIcon } from '../../icons'
-import { Button, HeaderDescription, HeaderTitle, PageHeader, PageLayout } from '../../ui'
+import { EnvelopeIcon, FacebookIconv2, GithubIcon, LinkedinIconv2, MessageIcon } from '../../icons'
+import { Button, PageLayout } from '../../ui'
 import { ConnectCard } from './ConnectCard'
+
+const socials = [
+	{
+		icon: <LinkedinIconv2 />,
+		label: 'LinkedIn',
+		desc: 'Connect with me professionally and see my career journey'
+	},
+	{
+		icon: <GithubIcon />,
+		label: 'GitHub',
+		desc: 'Check out my latest projects and open source contributions'
+	},
+	{
+		icon: <FacebookIconv2 />,
+		label: 'Facebook',
+		desc: 'Behind the scenes of my development journey'
+	}
+]
 
 function Contact() {
 	return (
 		<>
-			<PageHeader>
-				<HeaderTitle>Get In Touch</HeaderTitle>
-				<HeaderDescription>something amazing together</HeaderDescription>
-			</PageHeader>
-			<PageLayout>
+			<PageLayout id='contact' title='Get In Touch' description='something amazing together'>
 				<div className='flex items-start justify-around gap-4 px-4 py-4'>
 					<div className='space-y-2 px-4 py-4'>
 						<span className='flex items-center gap-2 text-xl font-bold'>
-							<EnvelopeIcon />
+							<MessageIcon />
 							Connect With Me
 						</span>
 						<p>
 							Follow me on social media to stay updated with my latest status, projects, tech insights,
 							and development journey. Let's cconnect and build something great together!
 						</p>
-						<ConnectCard />
-						<ConnectCard />
-						<ConnectCard />
-						<ConnectCard />
+						{socials.map((item) => {
+                            return (
+                                <ConnectCard desc={item.desc} icon={item.icon} label={item.label} key={item.label}/>
+                            )
+                        })}
 					</div>
 					<div className='space-y-2 px-4 py-4'>
 						<span className='flex items-center gap-2 text-xl font-bold'>

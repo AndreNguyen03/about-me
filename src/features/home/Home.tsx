@@ -4,7 +4,7 @@ import { Introduce } from './Introduce'
 
 function Home() {
 	return (
-		<PageLayout>
+		<PageLayout id='home'>
 			<Introduce />
 			<Avatar src='/anh.jpg' />
 		</PageLayout>

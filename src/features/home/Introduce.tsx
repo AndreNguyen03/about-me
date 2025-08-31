@@ -8,6 +8,7 @@ import {
 	SwatchbookIcon
 } from '../../icons'
 import { Badge, Button } from '../../ui'
+import { smoothScrollToId } from '../../utils/smoothScroll'
 
 function Introduce() {
 	return (
@@ -35,20 +36,38 @@ function Introduce() {
 				</Badge>
 			</div>
 			<div className='flex gap-4'>
-				<Button variant='primary'>
+				<Button
+					variant='primary'
+					onClick={() => {
+						smoothScrollToId('projects', 1000, 20)
+					}}
+				>
 					<SwatchbookIcon />
 					View Projects
 					<RightArrowIcon />
 				</Button>
-				<Button variant='secondary'>
+				<Button
+					variant='secondary'
+					onClick={() => {
+						smoothScrollToId('contact', 1000, 20)
+					}}
+				>
 					<EnvelopeIcon />
 					Let's Work Together
 				</Button>
 			</div>
 			<div className='mt-6 flex items-center gap-2'>
 				<p className='text-sm font-semibold text-slate-700'>Follow me: </p>
-				<LinkedinIcon />
-				<FacebookIcon />
+				<a
+					href='https://www.linkedin.com/in/anh-nguy%E1%BB%85n-nguy%C3%AAn-ng%E1%BB%8Dc-706a4125a/'
+					target='_blank'
+					rel='noopener noreferrer'
+				>
+					<LinkedinIcon />
+				</a>
+				<a href=''>
+					<FacebookIcon />
+				</a>
 			</div>
 		</div>
 	)
