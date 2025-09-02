@@ -3,6 +3,7 @@ import {
 	CalendarIcon,
 	EnvelopeIcon,
 	FacebookIcon,
+	GithubIcon,
 	LinkedinIcon,
 	LocationIcon,
 	RightArrowIcon,
@@ -75,6 +76,9 @@ function Introduce() {
 				</a>
 				<a href='https://www.facebook.com/ngoc.nguyen.816796' target='_blank' rel='noopener noreferrer'>
 					<FacebookIcon />
+				</a>
+				<a href='https://github.com/AndreNguyen03' target='_blank' rel='noopener noreferrer'>
+					<GithubIcon />
 				</a>
 			</div>
 		</div>
