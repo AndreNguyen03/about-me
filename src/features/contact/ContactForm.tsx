@@ -46,7 +46,7 @@ function ContactForm() {
 	})
 
 	return (
-		<div ref={ref} className='space-y-2 px-4 py-4'>
+		<div ref={ref} className='w-full space-y-2 px-4 py-4'>
 			{isVisible && (
 				<>
 					<span className='flex items-center gap-2 text-xl font-bold'>
@@ -61,15 +61,15 @@ function ContactForm() {
 							<EnvelopeIcon />
 							Send Me a Message
 						</span>
-						<div className='flex items-center gap-2'>
-							<div className='flex flex-1 flex-col gap-2'>
+						<div className='flex flex-col md:flex-row items-center w-full gap-2'>
+							<div className='flex flex-1 flex-col gap-2 w-full md:w-0'>
 								<label>Name *</label>
 								<input type='text' {...register('customer')} className='input grow' />
 								{errors.customer && (
 									<span className='text-sm text-red-500'>{errors.customer.message}</span>
 								)}
 							</div>
-							<div className='flex flex-1 flex-col gap-2'>
+							<div className='flex flex-1 flex-col gap-2 w-full md:w-0'>
 								<label>Email *</label>
 								<input type='text' {...register('email')} className='input grow' />
 								{errors.email && <span className='text-sm text-red-500'>{errors.email.message}</span>}

@@ -70,7 +70,7 @@ function NavigationBar({ tracking }: { tracking: string }) {
 			<div
 				className={`fixed right-0 top-0 h-full w-1/2 transform bg-white shadow-lg transition-transform duration-300 md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
 			>
-				<div className='flex items-center justify-between border-b p-4'>
+				<div className='flex items-center justify-between border-b bg-white p-4'>
 					<span className='flex items-center gap-2 font-bold'>
 						<MenuIcon size={18} /> Navigation
 					</span>
@@ -79,7 +79,7 @@ function NavigationBar({ tracking }: { tracking: string }) {
 					</button>
 				</div>
 
-				<div className='flex flex-col space-y-4 p-4'>
+				<div className='flex flex-col space-y-4 bg-white p-4'>
 					{sections.map((item) => {
 						return (
 							<button
