@@ -1,11 +1,14 @@
+import { useViewportAnimation } from '../../hooks'
+
 function Avatar({ src }: { src: string }) {
+	const fadeDown = useViewportAnimation({
+		animationClass: 'animate-fadeInLeft lg:animate-fadeInDown'
+	})
 	return (
-		<div className='flex w-full items-center justify-center md:w-1/2'>
-			<img
-				className='rounded-lg object-cover h-[24rem] w-[23rem]'
-				src={src}
-				alt='anh_dai_dien'
-			/>
+		<div ref={fadeDown.ref} className='flex w-full items-center justify-center md:w-1/2'>
+			{fadeDown.isVisible && (
+				<img className='h-[24rem] w-[23rem] rounded-lg object-cover' src={src} alt='anh_dai_dien' />
+			)}
 		</div>
 	)
 }

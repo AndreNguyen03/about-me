@@ -1,3 +1,4 @@
+import { useViewportAnimation } from '../../hooks'
 import {
 	CalendarIcon,
 	EnvelopeIcon,
@@ -11,8 +12,9 @@ import { Badge, Button, TypingText } from '../../ui'
 import { smoothScrollToId } from '../../utils/smoothScroll'
 
 function Introduce() {
+	const fadeRight = useViewportAnimation({ animationClass: 'animate-fadeInRight' })
 	return (
-		<div className='flex w-full flex-col justify-center md:w-1/2'>
+		<div ref={fadeRight.ref} className='flex w-full flex-col justify-center md:w-1/2'>
 			<span className='w-fit rounded-md bg-tag px-2 py-1 text-xs font-semibold text-green-700 shadow-lg'>
 				<div className='mr-1 inline-block h-2 w-2 rounded-full bg-[#90E7B0]'></div>
 				Available for freelance work

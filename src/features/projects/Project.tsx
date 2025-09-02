@@ -1,3 +1,4 @@
+import { useViewportAnimation } from '../../hooks'
 import { PageLayout } from '../../ui'
 import { ProjectCard, type ProjectType } from './ProjectCard'
 
@@ -45,13 +46,18 @@ const projects: ProjectType[] = [
 	}
 ]
 function Project() {
+	const { ref, isVisible } = useViewportAnimation({ animationClass: 'animate-fadeInLeft lg:animate-fadeInDown' })
 	return (
 		<>
 			<PageLayout id='projects' title='My Projects' description='A show case of my development work'>
-				<div className='flex h-fit w-full flex-col items-start justify-center gap-6 rounded-lg border-t-2 border-slate-200 px-4 py-6 shadow-xl md:flex-row md:flex-wrap md:px-8 md:py-8'>
-					{projects.map((item) => (
-						<ProjectCard project={item} key={item.title} />
-					))}
+				<div ref={ref}>
+					{isVisible && (
+						<div className='flex h-fit w-full flex-col items-start justify-center gap-6 rounded-lg border-t-2 border-slate-200 px-4 py-6 shadow-xl md:flex-row md:flex-wrap md:px-8 md:py-8'>
+							{projects.map((item) => (
+								<ProjectCard project={item} key={item.title} />
+							))}
+						</div>
+					)}
 				</div>
 			</PageLayout>
 		</>

@@ -34,6 +34,7 @@ const skillsData = {
 }
 
 function Skill() {
+
 	return (
 		<>
 			<PageLayout id='skills'

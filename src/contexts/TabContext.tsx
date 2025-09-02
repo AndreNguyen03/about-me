@@ -1,4 +1,5 @@
 import { createContext, useState, type ReactNode } from 'react'
+import { useViewportAnimation } from '../hooks';
 
 interface TabsContextType {
 	activeTab: string
@@ -9,9 +10,10 @@ const TabsContext = createContext<TabsContextType | null>(null)
 
 function TabProvider({ defaultValue, children }: { defaultValue: string; children: ReactNode }) {
 	const [activeTab, setActiveTab] = useState(defaultValue)
+    const {ref, isVisible} = useViewportAnimation({animationClass: 'animate-fadeInLeft lg:animate-fadeInDown'})
 	return (
 		<TabsContext.Provider value={{ activeTab, setActiveTab }}>
-			<div className='flex flex-col'>{children}</div>
+			<div ref={ref} className='flex flex-col'>{isVisible && children}</div>
 		</TabsContext.Provider>
 	)
 }

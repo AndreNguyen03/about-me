@@ -1,4 +1,5 @@
 import { TabProvider } from '../../contexts'
+import { useViewportAnimation } from '../../hooks'
 import { BriefcaseIcon, GraduateIcon, SwatchbookIcon } from '../../icons'
 import { PageLayout, Tab, TabList, TabPanel, TabPanels } from '../../ui'
 import { ExperienceCard } from './ExperienceCard'
@@ -18,6 +19,7 @@ const workExp = null
 const achieExp = null
 
 function Experience() {
+	const { ref, isVisible } = useViewportAnimation({ animationClass: 'animate-fadeInDown' })
 	return (
 		<>
 			<PageLayout
@@ -25,32 +27,42 @@ function Experience() {
 				title='My Experience'
 				description='A journey through my professional growth, education, and achievements.'
 			>
-				<div className='h-fit w-full rounded-xl px-4 py-4 shadow-xl'>
-					<TabProvider defaultValue='education'>
-						<TabList>
-							<Tab value='work' icon={<BriefcaseIcon />}>
-								Work Experience
-							</Tab>
-							<Tab value='education' icon={<GraduateIcon />}>
-								Education
-							</Tab>
-							<Tab value='achievements' icon={<SwatchbookIcon />}>
-								Achievements
-							</Tab>
-						</TabList>
+				<div ref={ref} className='h-fit w-full rounded-xl px-4 py-4 shadow-xl'>
+					{isVisible && (
+						<TabProvider defaultValue='education'>
+							<TabList>
+								<Tab value='work' icon={<BriefcaseIcon />}>
+									Work Experience
+								</Tab>
+								<Tab value='education' icon={<GraduateIcon />}>
+									Education
+								</Tab>
+								<Tab value='achievements' icon={<SwatchbookIcon />}>
+									Achievements
+								</Tab>
+							</TabList>
 
-						<TabPanels>
-							<TabPanel value='work'>
-								{workExp ? <ExperienceCard /> : <span className='m-auto text-lg italic'>Not yet</span>}
-							</TabPanel>
-							<TabPanel value='education'>
-								<ExperienceCard />
-							</TabPanel>
-							<TabPanel value='achievements'>
-								{achieExp ? <ExperienceCard /> : <span className='m-auto text-lg italic'>Not yet</span>}
-							</TabPanel>
-						</TabPanels>
-					</TabProvider>
+							<TabPanels>
+								<TabPanel value='work'>
+									{workExp ? (
+										<ExperienceCard />
+									) : (
+										<span className='m-auto text-lg italic'>Not yet</span>
+									)}
+								</TabPanel>
+								<TabPanel value='education'>
+									<ExperienceCard />
+								</TabPanel>
+								<TabPanel value='achievements'>
+									{achieExp ? (
+										<ExperienceCard />
+									) : (
+										<span className='m-auto text-lg italic'>Not yet</span>
+									)}
+								</TabPanel>
+							</TabPanels>
+						</TabProvider>
+					)}
 				</div>
 			</PageLayout>
 		</>

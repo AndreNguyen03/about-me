@@ -6,7 +6,7 @@ function Home() {
 	return (
 		<PageLayout id='home'>
 			<Introduce />
-			<Avatar src='/anh.jpg' />
+			<Avatar src='/anh1.jpg' />
 		</PageLayout>
 	)
 }

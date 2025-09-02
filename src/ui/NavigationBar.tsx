@@ -11,6 +11,7 @@ import {
 } from '../icons'
 import { smoothScrollToId } from '../utils/smoothScroll'
 import OpenSidebarIcon from '../icons/OpenSidebarIcon'
+import { useViewportAnimation } from '../hooks'
 
 const sections = [
 	{
@@ -41,9 +42,9 @@ const sections = [
 
 function NavigationBar({ tracking }: { tracking: string }) {
 	const [isOpen, setIsOpen] = useState(false)
-
+	const fadeDown = useViewportAnimation({ animationClass: 'animate-fadeInDown' })
 	return (
-		<nav className='fixed left-0 top-0 z-50 flex w-full items-center justify-between p-4'>
+		<nav ref={fadeDown.ref} className='fixed left-0 top-0 z-50 flex w-full items-center justify-between p-4'>
 			<div className='absolute left-1/2 top-4 z-10 hidden w-[50rem] -translate-x-1/2 items-center justify-around rounded-full border bg-white px-2 py-2 shadow-xl md:flex'>
 				{sections.map((item) => {
 					return (

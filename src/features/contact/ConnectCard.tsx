@@ -6,7 +6,7 @@ function ConnectCard({ icon, label, desc, link }: { link: string; icon: ReactEle
 			<div className='flex gap-2 rounded-lg px-6 py-6 shadow-lg'>
 				{icon}
 				<div className='flex flex-col'>
-					<a className='text-sm font-bold' href={link} target='_blank' rel='noopener noreferrer'>
+					<a className='text-sm font-bold hover:underline' href={link} target='_blank' rel='noopener noreferrer'>
 						{label} <span className='font-normal text-slate-400'>@AndreNguyen03</span>
 					</a>
 					<p className='text-sm text-slate-500'>{desc}</p>
