@@ -6,7 +6,7 @@ import { ContactForm, ConnectWithMe } from './'
 function Contact() {
 	useEffect(() => {
 		emailjs.init({
-			publicKey: 'AXniuuF3GbSpe3VNB',
+			publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
 			blockHeadless: true,
 			limitRate: {
 				id: 'app',

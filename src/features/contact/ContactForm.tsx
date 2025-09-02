@@ -31,8 +31,8 @@ function ContactForm() {
 		setSuccess(null)
 		try {
 			await emailjs.send(
-				'service_3kfn3vh', // your service ID
-				'template_zm6k74n', // your template ID
+				import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+				import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
 				data // form data object
 			)
 			setSuccess('Message sent successfully!')
