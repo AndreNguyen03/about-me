@@ -7,12 +7,12 @@ import {
 	RightArrowIcon,
 	SwatchbookIcon
 } from '../../icons'
-import { Badge, Button } from '../../ui'
+import { Badge, Button, TypingText } from '../../ui'
 import { smoothScrollToId } from '../../utils/smoothScroll'
 
 function Introduce() {
 	return (
-		<div className='ml-10 flex w-1/2 flex-col justify-center'>
+		<div className='flex w-full flex-col justify-center md:w-1/2'>
 			<span className='w-fit rounded-md bg-tag px-2 py-1 text-xs font-semibold text-green-700 shadow-lg'>
 				<div className='mr-1 inline-block h-2 w-2 rounded-full bg-[#90E7B0]'></div>
 				Available for freelance work
@@ -20,10 +20,14 @@ function Introduce() {
 			<p className='mt-4 text-4xl font-bold text-gray-900'>
 				Hi, I'm <br /> Nguyen Nguyen Ngoc Anh
 			</p>
-			<p className='py-4 text-2xl font-semibold text-gray-700'>Frontend Developer</p>
+			<TypingText
+				texts={['Frontend Developer', 'Backend Developer', 'Software Developer']}
+				className='py-4 text-2xl font-semibold text-gray-700'
+			/>
 			<p className='text-base text-gray-600'>
-				I create beautiful, functional, and user-centered digital experiences. With 2+ years of experience in
-				web development. I bring ideas to life through clean code and thoughtful design!
+				I build innovative, efficient, and user-friendly software solutions. As a Software Engineering student
+				at UIT, with hands-on experience in projects like AI-powered VSCode extensions and clinic management
+				systems, I transform ideas into reality with clean code and modern technologies!
 			</p>
 			<div className='flex gap-4 py-4'>
 				<Badge>
@@ -37,6 +41,7 @@ function Introduce() {
 			</div>
 			<div className='flex gap-4'>
 				<Button
+					className='flex-1 sm:flex-none'
 					variant='primary'
 					onClick={() => {
 						smoothScrollToId('projects', 1000, 20)
@@ -47,6 +52,7 @@ function Introduce() {
 					<RightArrowIcon />
 				</Button>
 				<Button
+					className='flex-1 sm:flex-none'
 					variant='secondary'
 					onClick={() => {
 						smoothScrollToId('contact', 1000, 20)
@@ -65,7 +71,7 @@ function Introduce() {
 				>
 					<LinkedinIcon />
 				</a>
-				<a href=''>
+				<a href='https://www.facebook.com/ngoc.nguyen.816796' target='_blank' rel='noopener noreferrer'>
 					<FacebookIcon />
 				</a>
 			</div>

@@ -6,10 +6,10 @@ type SkillCard = {
 
 function SkillCard({ label, percent, subtitle }: SkillCard) {
 	return (
-		<div className='flex flex-col gap-2 rounded-lg px-4 py-4 shadow-lg'>
+		<div className='flex flex-col gap-2 rounded-lg shadow-lg px-2 py-2'>
 			<div className='flex items-center justify-between'>
-				<span className='font-bold'>{label}</span>
-				<span>{percent}%</span>
+				<span className='text-xs font-bold md:text-base'>{label}</span>
+				<span className='text-xs md:text-base'>{percent}%</span>
 			</div>
 			<div className='h-2 w-full rounded-full bg-gray-200'>
 				<div className='h-2 rounded-full bg-gray-800' style={{ width: `${percent}%` }}></div>

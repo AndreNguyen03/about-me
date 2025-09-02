@@ -16,14 +16,16 @@ function PageLayout({
 }) {
 	return (
 		<>
-			<section id={id} className='flex h-screen w-full flex-col items-center justify-center'>
+			<section id={id} className='flex h-auto min-h-screen w-full flex-col items-center justify-center px-4 py-4 md:py-2'>
 				{title && description && (
 					<PageHeader>
 						<HeaderTitle>{title}</HeaderTitle>
 						<HeaderDescription>{description}</HeaderDescription>
 					</PageHeader>
 				)}
-				<div className='flex h-fit w-[70rem] items-center'>{children}</div>
+				<div className='flex h-fit w-full max-w-[70rem] flex-col items-center md:flex-row gap-4'>
+					{children}
+				</div>
 			</section>
 		</>
 	)
