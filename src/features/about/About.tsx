@@ -10,7 +10,7 @@ function About() {
 				title='About'
 				description='Passionate about creating innovative solutions through technology.'
 			>
-				<Avatar src='/anh2.jpg' />
+				<Avatar src='anh2.jpg' />
 				<ProfileDetail />
 			</PageLayout>
 		</>

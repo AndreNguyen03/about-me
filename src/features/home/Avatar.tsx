@@ -7,7 +7,7 @@ function Avatar({ src }: { src: string }) {
 	return (
 		<div ref={fadeDown.ref} className='flex w-full items-center justify-center md:w-1/2'>
 			{fadeDown.isVisible && (
-				<img className='h-[24rem] w-[23rem] rounded-lg object-cover' src={src} alt='anh_dai_dien' />
+				<img className='h-[24rem] w-[23rem] rounded-lg object-cover' src={`/e-portfolio/${src}`} alt='anh_dai_dien' />
 			)}
 		</div>
 	)
