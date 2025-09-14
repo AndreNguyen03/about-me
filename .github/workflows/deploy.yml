@@ -30,15 +30,15 @@ jobs:
             # check secrets exist
             - name: Check secrets status
               run: |
-                echo "EMAILJS_SERVICE_ID is set: ${EMAILJS_SERVICE_ID:+yes}"
-                echo "EMAILJS_TEMPLATE_ID is set: ${EMAILJS_TEMPLATE_ID:+yes}"
-                echo "EMAILJS_PUBLIC_KEY is set: ${EMAILJS_PUBLIC_KEY:+yes}"
+                echo "VITE_EMAILJS_SERVICE_ID is set: ${VITE_EMAILJS_SERVICE_ID:+yes}"
+                echo "VITE_EMAILJS_TEMPLATE_ID is set: ${VITE_EMAILJS_TEMPLATE_ID:+yes}"
+                echo "VITE_EMAILJS_PUBLIC_KEY is set: ${VITE_EMAILJS_PUBLIC_KEY:+yes}"
 
             - name: Ensure secrets exist
               run: |
-                test -n "$EMAILJS_SERVICE_ID" || (echo "❌ Missing EMAILJS_SERVICE_ID" && exit 1)
-                test -n "$EMAILJS_TEMPLATE_ID" || (echo "❌ Missing EMAILJS_TEMPLATE_ID" && exit 1)
-                test -n "$EMAILJS_PUBLIC_KEY" || (echo "❌ Missing EMAILJS_PUBLIC_KEY" && exit 1)
+                test -n "$VITE_EMAILJS_SERVICE_ID" || (echo "❌ Missing VITE_EMAILJS_SERVICE_ID" && exit 1)
+                test -n "$VITE_EMAILJS_TEMPLATE_ID" || (echo "❌ Missing VITE_EMAILJS_TEMPLATE_ID" && exit 1)
+                test -n "$VITE_EMAILJS_PUBLIC_KEY" || (echo "❌ Missing VITE_EMAILJS_PUBLIC_KEY" && exit 1)
 
             # cache the dependencies to speed up the build
             - name: Cache dependencies
