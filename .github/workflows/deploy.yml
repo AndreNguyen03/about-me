@@ -53,11 +53,6 @@ jobs:
             - name: Install dependencies
               run: npm i
 
-            - name: Variable to dotenv
-              uses: CallePuzzle/envvar-to-dotenv-action@0.1.0
-              with:
-                  variableNamesByFilter: ^VITE_.*
-
             # build the react app
             - name: Build
               run: npm run build
