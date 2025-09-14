@@ -12,9 +12,9 @@ jobs:
     deploy-react-to-gh-pages:
         runs-on: ubuntu-latest
         env:
-            EMAILJS_SERVICE_ID: ${{secrets.EMAILJS_SERVICE_ID}}
-            EMAILJS_TEMPLATE_ID: ${{secrets.EMAILJS_TEMPLATE_ID}}
-            EMAILJS_PUBLIC_KEY: ${{secrets.EMAILJS_PUBLIC_KEY}}
+            VITE_EMAILJS_SERVICE_ID: ${{secrets.EMAILJS_SERVICE_ID}}
+            VITE_EMAILJS_TEMPLATE_ID: ${{secrets.EMAILJS_TEMPLATE_ID}}
+            VITE_EMAILJS_PUBLIC_KEY: ${{secrets.EMAILJS_PUBLIC_KEY}}
 
         steps:
             # checkout the repository content to github runner
