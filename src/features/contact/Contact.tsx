@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser'
 import { ContactForm, ConnectWithMe } from './'
 
 function Contact() {
+    console.log(`publickey ::: `,import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
 	useEffect(() => {
 		emailjs.init({
 			publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,

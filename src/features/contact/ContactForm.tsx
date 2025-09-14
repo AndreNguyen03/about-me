@@ -26,6 +26,9 @@ function ContactForm() {
 		formState: { errors }
 	} = useForm<FormData>({ resolver: yupResolver(formSchema) })
 
+    console.log(`service_id ::: `,import.meta.env.VITE_EMAILJS_SERVICE_ID)
+    console.log(`template_id ::: `,import.meta.env.VITE_EMAILJS_TEMPLATE_ID)
+
 	const sendEmail = handleSubmit(async (data: FormData) => {
 		setLoading(true)
 		setSuccess(null)
